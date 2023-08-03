@@ -14,9 +14,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # "build" workflow
+  build:
+    name: Build and Test Application
+    #The type of runner on which job will run
+    runs-on: ubuntu-latest
+    
   # "notify" workflow for slack notification
   notify:
-
     name: Notify on Slack
     runs-on: ubuntu-latest
     # Only run this workflow when "build" workflow succeeds
