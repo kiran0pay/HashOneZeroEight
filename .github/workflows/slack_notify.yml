@@ -1,5 +1,5 @@
 # Name of workflow to be displayed on GitHub Console
-name: Build and Test Slack Notification
+name: Test Slack Notification
 
 # Triggers the workflow on separate events
 on:
@@ -14,19 +14,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # "build" workflow
-  build:
-
-    name:  Build and Test Slack Notification
-    #The type of runner on which job will run
-    runs-on: ubuntu-latest
-
-    # steps can run commands, setup tasks or run an action
-    steps:
-
-      - name: Checkout Source Code
-        # action/checkout@v2 checks-out your repo under github workspace.
-        uses: actions/checkout@v2
 
   # "notify" workflow for slack notification
   notify:
@@ -34,7 +21,7 @@ jobs:
     name: Notify on Slack
     runs-on: ubuntu-latest
     # Only run this workflow when "build" workflow succeeds
-    needs: [build]
+    # needs: [build]
 
     # Only run this workflow if it target is main branch on pull_request event
     if: ${{ github.base_ref == 'main' && github.event_name == 'pull_request' }}
