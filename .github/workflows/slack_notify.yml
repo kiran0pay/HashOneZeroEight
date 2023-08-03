@@ -1,5 +1,5 @@
-# Name of workflow to be displayed on Git hub Console
-name: Build and Test Go Application
+# Name of workflow to be displayed on GitHub Console
+name: Build and Test Slack Notification
 
 # Triggers the workflow on separate events
 on:
@@ -17,7 +17,7 @@ jobs:
   # "build" workflow
   build:
 
-    name: Build and Test Go Application
+    name:  Build and Test Slack Notification
     #The type of runner on which job will run
     runs-on: ubuntu-latest
 
