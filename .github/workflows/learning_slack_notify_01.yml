@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Notify slack
+    - name: Notify slack - SK Rocket
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_SECRET_KEY }}
         
