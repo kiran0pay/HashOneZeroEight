@@ -10,7 +10,7 @@ on:
     branches: '**'   # [ "main" ]
 
 jobs:
-  slack:
+  slack_direct_message:
 
     runs-on: ubuntu-latest
     
@@ -22,7 +22,7 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_SECRET_KEY }}
         with:
           # custom message to send to slack
-         args: '{\"channel\":\"C05L0RYE6MT\",\"blocks\":\"text\":\"SK :rocket:\"}'
+         args: '{\"channel\":\"C05L0RYE6MT\",\"text\":\"SK :rocket:\"}'
          
         # Pick up events even if the job is success.
         if: success()
