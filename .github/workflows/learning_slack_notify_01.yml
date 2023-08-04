@@ -22,7 +22,7 @@ jobs:
         
       uses: pullreminders/slack-action@master
       with:
-       args: '{\"channel\":\"C05L0RYE6MT\",\"blocks\": \"text\":\":rocket: SK"\}'
+       args: '{\"channel\":\"C05L0RYE6MT\",\"blocks\": \"text\":\"SK :rocket: \"}'
        
     #status: ${{ job.status }}
     #version: '1.0.0'
