@@ -8,9 +8,9 @@ on:
     branches:
       -  '**'
   pull_request:
-    # Trigger the work flow on pull request event for main branch
+    # Trigger the work flow on pull request event for all branches
     branches:
-      - main
+      -  '**'   #- main
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
