@@ -22,9 +22,4 @@ jobs:
         
       uses: pullreminders/slack-action@master
       with:
-       args: '{\"channel\":\"C05L0RYE6MT\",\"blocks\": \"text\":\"SK :rocket: \"}'
-       
-    #status: ${{ job.status }}
-    #version: '1.0.0'
-    #platform: 'Android'
-    #channel: '#workflows'
+       args: '{\"channel\":\"C05L0RYE6MT\",\"blocks\": \"text\":\"SK message invalid char\"}'
