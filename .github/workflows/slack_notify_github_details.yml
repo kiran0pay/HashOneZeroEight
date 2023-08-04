@@ -23,8 +23,8 @@ jobs:
       # Only run this workflow when "build" workflow succeeds
       # needs: [build]
 
-    # Only run this workflow if it target is main branch on pull_request event
-    if: ${{ github.base_ref == 'main' && github.event_name == 'pull_request' }}
+    # Only run this workflow if target is main branch on pull_request event
+    # if: ${{ github.base_ref == 'main' && github.event_name == 'pull_request' }}
 
     steps:
 
