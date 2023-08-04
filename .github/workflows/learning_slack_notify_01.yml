@@ -13,13 +13,16 @@ jobs:
   slack:
 
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v3
-    - name: Notify SK Rocket
-      env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_SECRET_KEY }}
-        
-      uses: pullreminders/slack-action@master
-      with:
-       args: '{\"channel\":\"C05L0RYE6MT\",\"blocks\":\"text\":\"SK :rocket: \"}'
+
+      - uses: pullreminders/slack-action@master
+        env:
+          # required
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_SECRET_KEY }}
+        with:
+          # custom message to send to slack
+         args: '{\"channel\":\"C05L0RYE6MT\",\"blocks\":\"text\":\"SK :rocket:\"}'
+         
+        # Pick up events even if the job is success.
+        if: success()
