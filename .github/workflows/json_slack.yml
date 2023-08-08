@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-
-      - uses: pullreminders/slack-action@master
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
