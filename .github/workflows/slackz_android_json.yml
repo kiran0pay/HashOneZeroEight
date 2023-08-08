@@ -20,11 +20,12 @@ jobs:
         java-version: 17
         distribution: temurin
         cache: gradle
-    - name: Setup Gradle
-      run: gradle/gradle-build-action@v2
+        
+    #- name: Setup Gradle
+    #  run: gradle/gradle-build-action@v3
       
-    - name: Build with Gradle
-      run: ./gradlew build
+    #- name: Build with Gradle
+    #  run: ./gradlew build
 
     - name: Send custom JSON data to Slack workflow
       id: slack
