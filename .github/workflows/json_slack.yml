@@ -1,0 +1,26 @@
+on:
+  push:
+    branches: '**'   # [ "main" ]
+  pull_request:
+    branches: '**'   # [ "main" ]
+
+jobs:
+  SendJSONData:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+
+      - uses: pullreminders/slack-action@master
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          # This data can be any valid JSON from a previous step in the GitHub Action
+          payload: |
+            {
+              "key": "value",
+              "foo": "bar"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
