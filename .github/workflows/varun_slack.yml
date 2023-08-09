@@ -1,0 +1,22 @@
+on:
+  push:
+    branches: '**'   # [ "main" ]
+  pull_request:
+    branches: '**'   # [ "main" ]
+
+jobs:
+  SendJSONData:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          - uses: alonsohki/slack-webhook-payload@v1
+          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          content: '{ text: "alonsohki library used message" }'
+            
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
